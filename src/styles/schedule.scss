@@ -1,0 +1,82 @@
+section.schedule {
+  width: 100vw;
+  .double-container {
+    .double-col {
+      &:first-of-type {
+        min-height: 1000px;
+      }
+      position: relative;
+      .animated-content {
+        bottom: 77px;
+        position: absolute;
+        .animated-hand {
+          width: 611px;
+          height: 632px;
+        }
+      }
+      .double-box {
+        width: 480px;
+        margin-top: 120px;
+        margin-left: 120px;
+      }
+      .schedule-box {
+        padding: 120px;
+        .card {
+          margin-top: 40px;
+          .content {
+            .extra {
+              gap: 24px;
+            }
+          }
+          .action {
+            .button {
+              width: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) and (-webkit-device-pixel-ratio: 1.25) {
+  section.schedule {
+    width: 125vw;
+  }
+}
+section.m-schedule {
+  width: 100vw;
+  .double-container {
+    .double-box {
+      padding: 40px 16px 0;
+    }
+    .animated-content {
+      height: 336px;
+      .animated-hand {
+        width: 306px;
+        height: 316px;
+      }
+    }
+    .schedule-box {
+      padding: 40px 16px;
+      .card {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 16px;
+        border-radius: 16px;
+        padding: 16px;
+        .content {
+          .extra {
+            gap: 24px;
+          }
+        }
+        .icon-button {
+          transform: rotate(-90deg);
+          svg {
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

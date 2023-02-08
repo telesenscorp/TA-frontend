@@ -1,0 +1,63 @@
+section.pay-failure {
+  padding: 140px 120px 112px;
+  .container {
+    padding: 40px 64px 80px;
+    box-shadow: 0 10px 16px rgba(10, 33, 41, 0.25);
+    border-radius: 32px;
+    position: relative;
+    .animated-hand {
+      position: absolute;
+      width: 237.88px;
+      height: 294px;
+      right: 50px;
+      top: calc(50% - 348px / 2);
+    }
+    .title-wrapper {
+      width: 850px;
+    }
+    .fit-content {
+      width: fit-content;
+    }
+    a {
+      display: block;
+    }
+    .button {
+      width: 300px;
+    }
+  }
+}
+@media screen and (max-width: 1440px) {
+  section.pay-failure {
+    .container {
+      .title-wrapper {
+        width: 700px;
+      }
+    }
+  }
+}
+section.m-pay-failure {
+  padding: 110px 16px 40px;
+  .container {
+    padding: 24px 16px 32px;
+    box-shadow: 0 10px 16px rgba(10, 33, 41, 0.25);
+    border-radius: 16px;
+    .back-to-select {
+      svg {
+        width: 10px;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+    .button {
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .link-label {
+      text-decoration: underline;
+    }
+    .fit-content {
+      width: fit-content;
+    }
+  }
+}

@@ -1,0 +1,401 @@
+section.reviews {
+  width: 100vw;
+  .double-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .double-col {
+      .animated-content {
+        position: relative;
+        height: 144px;
+        transform: translate(100px, -250px);
+        .animated-hand {
+          position: absolute;
+          width: 300px;
+          height: 431px;
+          top: -100px;
+          left: 240px;
+          z-index: -1;
+          transform: rotateZ(-5deg);
+          transform-origin: center;
+        }
+        .rect {
+          width: 440px;
+          height: 230px;
+          border-radius: 24px;
+          position: absolute;
+          left: 150px;
+          bottom: -150px;
+          z-index: -2;
+          transform-origin: center;
+          transform: rotate(14deg);
+        }
+      }
+      .double-box {
+        width: 480px;
+        margin: 120px 0 150px 120px;
+        position: relative;
+        z-index: 1;
+        .title {
+          height: 256px;
+        }
+      }
+      .reviews-box {
+        margin: 120px 0 150px 120px;
+        position: relative;
+        .review-container {
+          display: flex;
+          flex-direction: row;
+          .reviews-cards {
+            position: relative;
+            width: 550px;
+            .card {
+              min-height: 342px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 550px;
+              transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+              &.active {
+                z-index: 1;
+              }
+              &.before {
+                opacity: 0;
+                transform: translateX(300px) scale(0.8);
+              }
+              &.after {
+                opacity: 0;
+                transform: translateX(-300px) scale(0.8);
+              }
+              .card-head {
+                display: flex;
+                flex-direction: row;
+                gap: 12px;
+                margin-bottom: 16px;
+                img {
+                  width: 40px;
+                  height: 40px;
+                  overflow: hidden;
+                  border-radius: 12px;
+                  object-fit: cover;
+                }
+              }
+              .card-body {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                line-clamp: 5;
+                -webkit-box-orient: vertical;
+                margin-bottom: 16px;
+              }
+              a {
+                display: block;
+                width: fit-content;
+              }
+              .button {
+                width: 128px;
+                height: 40px;
+                padding: 8px 16px;
+                border-radius: 8px;
+              }
+              .card-footer {
+                position: absolute;
+                right: 32px;
+                bottom: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+              }
+            }
+          }
+          .reviews-controller {
+            .control-box {
+              div + div {
+                transform: scaleX(-1);
+              }
+              svg {
+                height: unset;
+                width: unset;
+              }
+              .pointy:hover {
+                box-shadow: 0 10px 16px -10px var(--sc7);
+                svg {
+                  circle {
+                    fill-opacity: 1;
+                  }
+                  path {
+                    fill: var(--c11);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .toggle-form {
+          position: absolute;
+          left: 550px;
+          top: 360px;
+          width: 70px;
+          height: 70px;
+          border-radius: 70px;
+          background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20.0004V25.0004H5L19.7467 10.2537L14.7467 5.25374L0 20.0004ZM23.6133 6.38707C24.1333 5.86707 24.1333 5.02707 23.6133 4.50707L20.4933 1.38707C19.9733 0.86707 19.1333 0.86707 18.6133 1.38707L16.1733 3.82707L21.1733 8.82707L23.6133 6.38707Z' fill='white'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+          cursor: pointer;
+          background-color: #fff5;
+          &.active,
+          &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 19.9999V24.9999H5L19.7467 10.2532L14.7467 5.25325L0 19.9999ZM23.6133 6.38658C24.1333 5.86658 24.1333 5.02658 23.6133 4.50658L20.4933 1.38658C19.9733 0.866582 19.1333 0.866582 18.6133 1.38658L16.1733 3.82658L21.1733 8.82658L23.6133 6.38658Z' fill='%23363636'/%3E%3C/svg%3E");
+            background-color: var(--w);
+            box-shadow: 0 10px 16px -10px var(--sc7);
+          }
+        }
+      }
+      .form-wrapper {
+        width: 550px;
+        margin: 372px 0 100px 120px;
+        padding: 24px 32px 40px;
+        border-radius: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .input-wrapper {
+          .input-border {
+            position: relative;
+            padding: 0;
+            input,
+            textarea {
+              border: 1px solid var(--c14);
+              width: 100%;
+              &:hover,
+              &:focus {
+                border: solid 1px var(--c11);
+              }
+            }
+            textarea {
+              width: calc(100% - 34px);
+              height: 149px;
+            }
+            .letters-counter {
+              position: absolute;
+              right: 16px;
+              bottom: 21px;
+              font-size: 10px;
+              line-height: 11px;
+            }
+          }
+          &.error {
+            p {
+              color: var(--c7) !important;
+            }
+            input,
+            textarea {
+              &:hover,
+              &:focus {
+                border: solid 1px var(--c11);
+              }
+            }
+          }
+        }
+        .submit-button {
+          margin-top: 16px;
+            svg {
+              width: unset;
+              height: unset;
+            }
+        }
+      }
+    }
+  }
+}
+
+section.m-reviews {
+  overflow: hidden;
+  .double-container {
+    .double-col {
+      padding: 40px 16px;
+      .animated-content {
+        position: relative;
+        height: 286px;
+        .animated-hand {
+          position: absolute;
+          width: 187px;
+          height: 268px;
+          transform: rotateZ(-5deg);
+          transform-origin: center;
+          left: calc(50% - 100px);
+        }
+        .rect {
+          width: 240px;
+          height: 124px;
+          border-radius: 24px;
+          position: absolute;
+          left: calc(50% - 120px);
+          bottom: 30px;
+          transform-origin: center;
+          transform: rotate(14deg);
+        }
+      }
+      .reviews-box {
+        min-height: 520px;
+        .review-container {
+          display: flex;
+          flex-direction: column-reverse;
+          .reviews-cards {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            .card {
+              //width: 288px;
+              border-radius: 16px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              padding: 24px 16px;
+              min-height: 445px;
+              transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+              &.active {
+                z-index: 1;
+              }
+              &.before {
+                opacity: 0;
+                transform: translateX(300px) scale(0.8);
+              }
+              &.after {
+                opacity: 0;
+                transform: translateX(-300px) scale(0.8);
+              }
+              .card-body {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 10;
+                line-clamp: 10;
+                -webkit-box-orient: vertical;
+                margin-bottom: 16px;
+              }
+              .button {
+                padding: 12px;
+                height: 45px;
+                width: 100%;
+              }
+              .card-footer {
+                position: absolute;
+                right: 16px;
+                bottom: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+              }
+            }
+          }
+          .reviews-controller {
+            align-self: flex-end;
+            .control-box {
+              .pointy {
+                height: 30px;
+                svg {
+                  height: unset;
+                  width: unset;
+                }
+              }
+              div + div {
+                transform: scaleX(-1);
+              }
+            }
+          }
+        }
+      }
+    }
+    .toggle-form {
+      margin: 24px 0 0 auto;
+      width: 70px;
+      height: 70px;
+      border-radius: 70px;
+      background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20.0004V25.0004H5L19.7467 10.2537L14.7467 5.25374L0 20.0004ZM23.6133 6.38707C24.1333 5.86707 24.1333 5.02707 23.6133 4.50707L20.4933 1.38707C19.9733 0.86707 19.1333 0.86707 18.6133 1.38707L16.1733 3.82707L21.1733 8.82707L23.6133 6.38707Z' fill='white'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      background-color: #fff5;
+      &.active {
+        background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 19.9999V24.9999H5L19.7467 10.2532L14.7467 5.25325L0 19.9999ZM23.6133 6.38658C24.1333 5.86658 24.1333 5.02658 23.6133 4.50658L20.4933 1.38658C19.9733 0.866582 19.1333 0.866582 18.6133 1.38658L16.1733 3.82658L21.1733 8.82658L23.6133 6.38658Z' fill='%23363636'/%3E%3C/svg%3E");
+        background-color: var(--w);
+        box-shadow: 0 10px 16px -10px var(--sc7);
+      }
+    }
+    .form-wrapper {
+      max-width: 550px;
+      margin-top: 32px;
+      padding: 24px 16px 24px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .input-wrapper {
+        .input-border {
+          position: relative;
+          padding: 0;
+          input,
+          textarea {
+            border: 1px solid var(--c14);
+            width: 100%;
+            &:hover,
+            &:focus {
+              border: solid 1px var(--c11);
+            }
+          }
+          textarea {
+            width: calc(100% - 34px);
+            height: 149px;
+          }
+          .letters-counter {
+            position: absolute;
+            right: 16px;
+            bottom: 21px;
+            font-size: 10px;
+            line-height: 11px;
+          }
+        }
+        &.error {
+          p {
+            color: var(--c7) !important;
+          }
+          input,
+          textarea {
+            &:hover,
+            &:focus {
+              border: solid 1px var(--c11);
+            }
+          }
+        }
+      }
+      .submit-button {
+        width: 100%;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) and (-webkit-device-pixel-ratio: 1.25) {
+  section.reviews {
+    width: 125vw;
+  }
+}
+@media screen and (max-width: 1440px) {
+  section.reviews {
+    .double-container {
+      .double-col {
+        .animated-content {
+          transform: translate(20px, -250px);
+        }
+        .double-box {
+          margin: 120px 0 150px 50px;
+        }
+      }
+    }
+  }
+}

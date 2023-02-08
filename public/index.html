@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="description" content="Telesens Academy" />
+    <meta name="google" content="notranslate" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Telesens Academy</title>
+    <style>
+      @font-face {
+        font-family: "PT-Mono";
+        font-weight: 400;
+        src: local("PT-Mono"),
+          url("%PUBLIC_URL%/fonts/PT-Mono_Regular.woff") format("woff");
+      }
+      @font-face {
+        font-family: "PT-Mono";
+        font-weight: 700;
+        src: local("PT-Mono"),
+          url("%PUBLIC_URL%/fonts/PT-Mono_Bold.woff") format("woff");
+      }
+      :root {
+        --w: #fff;
+        --b: #000;
+        --c1: #645bc8;
+        --c2: #473dab;
+        --c3: #372f8d;
+        --c4: #372f8d;
+        --c5: #d9a25e;
+        --c6: #d49548;
+        --c7: #d44848;
+        --c8: #cf3240;
+        --c9: #81b26a;
+        --c10: #6f995b;
+        --c11: #0b0f33;
+        --c12: #747474;
+        --c13: #363636;
+        --c14: #e6e6e6;
+        --c15: #0a2129;
+        --borderHeader: #d9d9d9;
+        --borderInput: #b3b3b3;
+        --g1: linear-gradient(90deg, #ff512f, #f09819);
+        --g2: linear-gradient(90deg, #6a3093, #a044ff);
+        --t: transparent;
+        --tw: hsla(0, 0%, 100%, 0.1);
+        --linkHover: #f5f5f5;
+        --sw: #0a2129;
+        --sc1: #383370;
+        --sc2: #473dab;
+        --sc3: #383370;
+        --sc4: #383370;
+        --sc5: #a96f28;
+        --sc6: #a96f28;
+        --sc7: #ba2d3a;
+        --sc8: #ba2d3a;
+        --sc9: #5d804c;
+        --sc10: #5d804c;
+        --sc11: #000;
+        --sc12: #747474;
+        --sc13: #363636;
+        --sc14: #0a2129;
+        --sc15: #e6e6e6;
+        --font: "PT-Mono";
+        --error: #d44848;
+      }
+      body,
+      div,
+      input,
+      main,
+      p {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body,
+      html,
+      main {
+        overscroll-behavior-x: none;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        overflow-x: hidden;
+      }
+      input,
+      textarea {
+        outline: none;
+      }
+      #splash {
+        background: linear-gradient(-45deg, var(--c1) 0, var(--c3) 100%);
+        height: 100vh;
+        position: relative;
+        transition: height 0.6s ease-out;
+        width: 100vw;
+        z-index: -1;
+      }
+      #splash,
+      #splash h1,
+      #splash h2 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+      #splash h1,
+      #splash h2 {
+        flex-direction: column;
+        font-family: PT-Mono, cursive;
+        font-size: 75px;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      #splash h1 span,
+      #splash h2 span {
+        will-change: transform, opacity, clip-path;
+        -webkit-animation-duration: 3s;
+        animation-duration: 3s;
+        -webkit-animation-name: titleAnimation;
+        animation-name: titleAnimation;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+        color: #fff;
+        opacity: 0;
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+        width: 100vw;
+      }
+      #splash h1 span {
+        -webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+      }
+      #splash h1 span:first-child {
+        -webkit-animation-delay: 0.7s;
+        animation-delay: 0.7s;
+      }
+      #splash h1 span:nth-child(2) {
+        color: #fc0;
+      }
+      #splash h1 span:last-child {
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
+      }
+      #splash h2 span {
+        -webkit-animation-delay: 4.1s;
+        animation-delay: 4.1s;
+      }
+      #splash h2 span:first-child {
+        -webkit-animation-delay: 4.2s;
+        animation-delay: 4.2s;
+      }
+      #splash h2 span:last-child {
+        -webkit-animation-delay: 4s;
+        animation-delay: 4s;
+        color: #fc0;
+      }
+      #splash svg {
+        will-change: transform, opacity;
+        -webkit-animation: logoAnimation 2s ease 7s forwards;
+        animation: logoAnimation 2s ease 7s forwards;
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+      }
+      @keyframes logoAnimation {
+        0% {
+          opacity: 0;
+          -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+      @keyframes titleAnimation {
+        0% {
+          -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+          opacity: 0;
+          -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+        }
+        20% {
+          -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        80% {
+          -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        to {
+          -webkit-clip-path: polygon(100% 0, 100% 0, 0 100%, 0 100%);
+          clip-path: polygon(100% 0, 100% 0, 0 100%, 0 100%);
+          opacity: 0;
+          -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+        }
+      }
+      @media (max-width: 1200px) {
+        #splash h1 span,
+        #splash h2 span {
+          font-size: 40px;
+          width: calc(100vw - 32px);
+          line-height: 150%;
+        }
+        #splash svg {
+          width: 100px;
+          height: 95px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="splash" class="splash">
+      <h1 class="title">
+        <span>Тепер весь</span>
+        <span>IT-світ</span>
+        <span>у твоїх руках</span>
+      </h1>
+      <h2 class="title">
+        <span>можеш</span>
+        <span>спробувати</span>
+        <span>все, що захочеш</span>
+      </h2>
+      <svg
+        width="478"
+        height="458"
+        viewBox="0 0 478 458"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M228.587 320.294C246.112 328.836 268.553 333.106 295.909 333.106C322.41 333.106 343.996 327.554 360.667 316.451C377.764 305.347 391.015 291.254 400.419 274.172L408.113 325.419H478L478 130.039C478 88.6148 464.963 56.5853 438.889 33.9512C412.815 11.3171 377.123 0 331.814 0C305.313 0 281.376 4.69764 260.004 14.0929C238.632 23.0612 221.106 36.0865 207.428 53.1688C194.177 70.2512 186.483 90.323 184.346 113.384L264.492 113.384C267.484 98.01 275.178 86.4794 287.574 78.7924C299.97 70.6783 314.503 66.6212 331.173 66.6212C349.553 66.6212 364.941 71.7459 377.337 81.9953C389.733 92.2448 395.931 108.259 395.931 130.039V137.727H315.144C311.642 137.727 308.206 137.779 304.836 137.885L139.652 137.885L139.652 52.0478L65.5641 52.0478L55.7295 137.885H0L0 206.942H55.7295L55.7295 346.347C55.7295 388.082 66.0012 417.125 86.5446 433.475C107.088 449.825 134.406 458 168.5 458L225.54 458L225.54 387.652H184.891C168.281 387.652 156.48 384.855 149.486 379.262C142.93 373.238 139.652 362.482 139.652 346.992L139.652 206.942H181.274C178.193 216.226 176.652 226.251 176.652 237.018C176.652 254.527 180.927 270.542 189.475 285.062C198.024 299.582 211.061 311.326 228.587 320.294ZM369.002 245.986C356.179 261.36 338.012 269.047 314.503 269.047C299.115 269.047 286.719 265.631 277.315 258.798C267.911 251.965 263.21 242.356 263.21 229.971C263.21 218.441 267.911 208.832 277.315 201.145C286.719 193.031 302.321 188.974 324.12 188.974H394.007C390.588 211.608 382.253 230.612 369.002 245.986Z"
+          fill="white"
+        />
+      </svg>
+    </div>
+    <main id="root"></main>
+  </body>
+</html>

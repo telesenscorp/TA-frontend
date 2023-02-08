@@ -1,0 +1,351 @@
+section.change-profession {
+  width: 100vw;
+  .double-container {
+    position: relative;
+    .wrapper {
+      padding: 140px 120px 0;
+      .content {
+        background-color: #fff;
+        padding: 128px 64px 80px;
+        border-radius: 32px;
+        box-shadow: 0 10px 16px rgba(10, 33, 41, 0.25);
+        overflow: hidden;
+        position: relative;
+        .back-to-select {
+          position: absolute;
+          cursor: pointer;
+          top: 40px;
+          padding: 4px 8px;
+          border-radius: 4px;
+          &:hover {
+            background-color: var(--c14);
+          }
+          svg {
+            width: unset;
+            height: unset;
+          }
+        }
+        .change-profession-card {
+          padding: 60px 40px;
+          border-radius: 32px;
+          .item {
+            width: fit-content;
+            .icon-container {
+              gap: 12px;
+              .icon-card {
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+                background-color: var(--w);
+              }
+            }
+          }
+        }
+        .pay-box {
+          padding: 16px 24px;
+          position: absolute;
+          width: 308px;
+          right: 64px;
+          border-radius: 16px;
+          background-color: var(--c14);
+          a {
+            display: block;
+            width: fit-content;
+            border-radius: 16px;
+            &:hover {
+              box-shadow: 0 10px 16px -10px var(--sc11);
+            }
+            .btn-pay {
+              height: 56px;
+              width: 260px;
+              position: static;
+            }
+          }
+        }
+        .animated-hand {
+          position: absolute;
+          width: 468px;
+          height: 561px;
+          right: -10px;
+          bottom: 200px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          transform-origin: center right;
+        }
+        .shadow {
+          animation: animateHandFromRightIdle 5s 2s ease-in-out infinite
+            alternate;
+        }
+        .min-h360 {
+          min-height: 360px;
+        }
+        .btn-pay {
+          position: absolute;
+          height: 56px;
+          width: 300px;
+          right: 64px;
+          &.full {
+            top: 128px;
+          }
+          &.partial {
+            top: 198px;
+          }
+        }
+        .input-wrapper {
+          margin-top: 4px;
+          .input-border {
+            input {
+              border: solid 1px #e6e6e6;
+              width: 850px;
+              &:hover,
+              &:focus {
+                border: solid 1px #0b0f33;
+              }
+            }
+            &:hover {
+              border: solid 1px transparent;
+            }
+            &:focus-within {
+              border: solid 1px transparent;
+            }
+          }
+          &.error {
+            p {
+              color: var(--error);
+              margin-top: 0;
+              margin-bottom: 10px;
+            }
+            .input-border {
+              input {
+                border: solid 1px transparent;
+                &:hover {
+                  border: solid 1px var(--c11);
+                }
+                &:focus {
+                  color: #0b0f33;
+                  border: solid 1px var(--c11);
+                }
+              }
+            }
+          }
+        }
+        .button.submit {
+          margin-top: 64px;
+        }
+        .step-2 .animated-hand {
+          bottom: 300px;
+        }
+      }
+    }
+    .background-row {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 32px 32px 0 0;
+    }
+  }
+  .proposal {
+    position: fixed;
+    top: 55px;
+    z-index: 10;
+    padding: 12px 64px;
+    border-bottom: 1px solid #000000;
+    .button {
+      height: 56px;
+      width: 220px;
+    }
+    .close-proposal {
+      height: 32px;
+      width: 32px;
+      border-radius: 4px;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='4' fill='%23F5F5F5'/%3E%3Cpath d='M11.7578 19.3284L18.8289 12.2573L20.2431 13.6715L13.172 20.7426L11.7578 19.3284Z' fill='%234D4D4D'/%3E%3Crect x='13.1719' y='12.2568' width='10' height='2' transform='rotate(45 13.1719 12.2568)' fill='%234D4D4D'/%3E%3C/svg%3E%0A");
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: 300ms ease;
+      &:hover {
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='4' fill='%234D4D4D'/%3E%3Cpath d='M11.7577 19.3279L18.8288 12.2568L20.243 13.671L13.1719 20.7421L11.7577 19.3279Z' fill='%23F5F5F5'/%3E%3Crect x='13.172' y='12.2568' width='10' height='2' transform='rotate(45 13.172 12.2568)' fill='%23F5F5F5'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+}
+@media screen and (max-width: 1440px) {
+  section.change-profession {
+    .double-container .wrapper .content {
+      .animated-hand {
+        width: calc(468px - 5%);
+      }
+      .step-2 .animated-hand {
+        bottom: 300px;
+      }
+      .input-wrapper .input-border input {
+        width: 700px;
+      }
+    }
+    .proposal {
+      & > p:first-child {
+        width: 600px;
+      }
+      & > p:nth-of-type(2) {
+        width: 228px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) and (-webkit-device-pixel-ratio: 1.25) {
+  section.change-profession {
+    width: 125vw;
+  }
+}
+section.m-change-profession {
+  .double-container {
+    position: relative;
+    .wrapper {
+      padding: 110px 16px 0;
+      .content {
+        background-color: #fff;
+        padding: 24px 16px 32px;
+        box-shadow: 0 10px 16px rgba(10, 33, 41, 0.25);
+        border-radius: 16px;
+        .back-to-select {
+          height: 21px;
+          width: fit-content;
+          svg {
+            width: 10px;
+            height: 21px;
+          }
+          span {
+            font-size: 14px;
+          }
+        }
+        .change-profession-card {
+          padding: 32px 24px;
+          border-radius: 16px;
+          row-gap: 40px;
+          .icon-container {
+            gap: 12px;
+            .icon-card {
+              width: 40px;
+              height: 40px;
+              border-radius: 8px;
+              background-color: var(--w);
+            }
+          }
+        }
+        .pay-box {
+          padding: 24px 16px;
+          border-radius: 16px;
+          background-color: var(--c14);
+          a {
+            display: block;
+            width: fit-content;
+            .btn-pay {
+              height: 56px;
+              width: calc(100vw - 96px);
+              padding: 12px;
+              &.full {
+                top: 128px;
+              }
+              &.partial {
+                top: 198px;
+              }
+            }
+          }
+        }
+        .btn-pay {
+          border-radius: 8px;
+        }
+        .input-wrapper {
+          margin: 0 -6px;
+          .input-border {
+            input {
+              border: solid 1px #e6e6e6;
+              width: 100%;
+              padding: 12px 16px;
+              &:hover,
+              &:focus {
+                border: solid 1px #0b0f33;
+              }
+            }
+            &:hover {
+              border: solid 1px transparent;
+            }
+            &:focus-within {
+              border: solid 1px transparent;
+            }
+          }
+          &.error {
+            p {
+              color: var(--error);
+              margin-top: 0;
+            }
+            .input-border {
+              input {
+                border: solid 1px transparent;
+              }
+              input:hover,
+              input:focus {
+                border: solid 1px var(--c11);
+              }
+            }
+          }
+        }
+        .button {
+          &.submit {
+            margin-top: 32px;
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+    .background-row {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 32px 32px 0 0;
+    }
+  }
+  .proposal {
+    position: fixed;
+    top: 55px;
+    z-index: 10;
+    padding: 8px 16px;
+    border-bottom: 1px solid #000000;
+    gap: 24px;
+    a {
+      width: 100%;
+      .button {
+        height: 56px;
+        width: 100%;
+      }
+    }
+    .wrapper-close-proposal {
+      width: 32px;
+      .close-proposal {
+        height: 32px;
+        width: 32px;
+        border-radius: 4px;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='4' fill='%23F5F5F5'/%3E%3Cpath d='M11.7578 19.3284L18.8289 12.2573L20.2431 13.6715L13.172 20.7426L11.7578 19.3284Z' fill='%234D4D4D'/%3E%3Crect x='13.1719' y='12.2568' width='10' height='2' transform='rotate(45 13.1719 12.2568)' fill='%234D4D4D'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: 300ms ease;
+      }
+    }
+  }
+}
+@keyframes animateHandFromRightIdle {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(-3deg);
+  }
+  100% {
+    transform: rotateZ(3deg);
+  }
+}

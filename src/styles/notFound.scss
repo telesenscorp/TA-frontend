@@ -1,0 +1,59 @@
+section.not-found {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .hand-container {
+    position: absolute;
+    width: 390px;
+    height: 482px;
+    top: 209px;
+    left: 288px;
+    background-image: url("../assets/hand-crossed.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .content-container {
+    position: absolute;
+    top: 240px;
+    right: 425px;
+    width: 480px;
+    .fit-content {
+      width: 220px;
+      .link-button {
+        display: block;
+        .button {
+          min-width: 220px;
+        }
+      }
+    }
+  }
+}
+@media screen and (-webkit-device-pixel-ratio: 1.25) {
+  section.not-found {
+    height: 125vh;
+  }
+}
+@media screen and (max-width: 1440px) {
+  section.not-found {
+    .hand-container {
+      left: 200px;
+    }
+    .content-container {
+      right: 120px;
+    }
+  }
+}
+section.m-not-found {
+  padding: 110px 16px 0;
+  min-height: calc(100vh - 110px);
+  .hand-container {
+    margin: 40px auto 0;
+    width: 200px;
+    height: 247px;
+    background-image: url("../assets/hand-crossed.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

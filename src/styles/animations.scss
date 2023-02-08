@@ -1,0 +1,72 @@
+.spring-animation {
+  will-change: transform;
+  transform: scale(0);
+  transition: transform 1s ease-out;
+  transform-origin: center;
+  &.wiggle {
+    transform: scale(1);
+    animation: wiggle 5s ease-in-out 1s infinite alternate-reverse;
+  }
+  &.rotate {
+    transform: scale(1) rotateZ(1turn);
+    animation: rotate 60s ease-in-out 1s infinite alternate-reverse;
+  }
+  &.wiggle-rotate {
+    transform: scale(1) rotateZ(40deg);
+    animation: wiggleRotate 5s ease-in-out 1s infinite alternate-reverse;
+  }
+  &.wave {
+    transform: scale(1) rotateZ(15deg);
+    animation: wave 3s ease-in-out 1s infinite alternate-reverse;
+  }
+  &.elevate {
+    transform: scale(0.9) translateY(20px);
+    animation: elevate 3s ease-in-out 1s infinite alternate-reverse;
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotateZ(0turn);
+  }
+  100% {
+    transform: scale(1) rotateZ(1turn);
+  }
+}
+@keyframes wiggleRotate {
+  0% {
+    transform: scale(1) rotateZ(5deg);
+  }
+  50% {
+    transform: scale(0.7) rotateZ(20deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(40deg);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: rotateZ(-15deg);
+  }
+  100% {
+    transform: rotateZ(15deg);
+  }
+}
+@keyframes elevate {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(0.9) translateY(20px);
+  }
+}

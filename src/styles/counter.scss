@@ -1,0 +1,41 @@
+section.counter {
+  width: 100vw;
+  .block-container {
+    // width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 118px 174px;
+    .counter-box {
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+section.mob-counter {
+  width: 100vw;
+  overflow: hidden;
+  .block-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 16px;
+    z-index: 1;
+    position: relative;
+    .counter-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+ 
+}
+@media screen and (min-width: 960px) and (-webkit-device-pixel-ratio: 1.25) {
+  section.counter {
+    width: 125vw;
+  }
+}

@@ -1,0 +1,14 @@
+export { mobileAndTabletCheck } from "./browserDetector";
+export { clamp } from "./clamp";
+export { copy } from "./copy";
+export { dot } from "./dot";
+export { getPlaceholderByName } from "./getPlaceholderByName";
+export { log } from "./logger";
+export { matchKeys } from "./matchKeys";
+export { default as styler } from "./styler";
+export { t } from "./translation";
+export { waiter, waiterCallback } from "./waiter";
+export { eventVisit, eventLeave } from "./analytic";
+export { handleWide } from "./handleWide";
+export { fromToFormat } from "./fromToFormat";
+export { JSONparse } from "./JSONparse";

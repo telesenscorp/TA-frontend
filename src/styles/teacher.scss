@@ -1,0 +1,47 @@
+section.teacher {
+  width: 100vw;
+  .double-col {
+    &.wrapper {
+      padding: 200px 120px 140px;
+      .double-box {
+        width: 480px;
+        .description {
+          width: 360px;
+        }
+      }
+    }
+    .teacher-image {
+      height: 100%;
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+@media screen and (-webkit-device-pixel-ratio: 1.25) {
+  section.teacher {
+    width: 125vw;
+  }
+}
+@media screen and (max-width: 1440px) {
+  section.teacher {
+    .double-col {
+      &.wrapper {
+        padding: 200px 50px 140px;
+      }
+    }
+  }
+}
+section.m-teacher {
+  .double-box {
+    padding: 40px 16px 0;
+  }
+  .teacher-image {
+    padding: 40px 0;
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}

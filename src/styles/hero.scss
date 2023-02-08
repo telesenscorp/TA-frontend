@@ -1,0 +1,127 @@
+section.hero {
+  --hand-left-start: -1100px;
+  --hand-left-end: -300px;
+  --hand-top: 200px;
+  @media only screen and (max-width: 1600px) {
+    --hand-left-end: -400px;
+  }
+  @media only screen and (max-width: 1280px) {
+    --hand-left-end: -500px;
+  }
+  width: 100vw;
+  .double-container {
+    display: flex;
+    width: 100%;
+    .double-col {
+      .animated-content {
+        position: relative;
+        .animated-hand {
+          position: absolute;
+          width: 1097px;
+          height: 363px;
+          top: 205px;
+          left: var(--hand-left-start);
+          transform: rotateZ(-5deg);
+          transform-origin: center left;
+          animation: animateHandFromLeftIn 2s ease-out forwards;
+        }
+        .shadow {
+          animation: animateHandFromLeftIdle 5s 2s ease-in-out infinite alternate;
+        }
+        .triangle {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+        }
+      }
+      .double-box {
+        width: 480px;
+        margin: 140px 0 140px 50px;
+      }
+      a {
+        display: block;
+        width: fit-content;
+      }
+    }
+  }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 1.25) {
+  section.hero {
+    width: 125vw;
+  }
+}
+
+section.m-hero {
+  --hand-left-end: -150px;
+  --hand-left-start: -450px;
+  --hand-top: 15px;
+  width: 100vw;
+  padding-top: 70px;
+  .double-container {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    .double-col {
+      .animated-content {
+        height: 180px;
+        position: relative;
+        .animated-hand {
+          position: absolute;
+          width: 450px;
+          height: 149px;
+          top: 5px;
+          left: var(--hand-left-start);
+          transform: rotateZ(-5deg);
+          transform-origin: center left;
+          animation: animateHandFromLeftIn 2s ease-out forwards;
+        }
+        .shadow {
+          animation: animateHandFromLeftIdle 5s 2s ease-in-out infinite alternate;
+        }
+        .triangle {
+          background-image: url("data:image/svg+xml,%3Csvg width='152' height='136' viewBox='0 0 152 136' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M59.3021 9.6128C66.6152 -3.05386 84.8979 -3.05387 92.211 9.6128L148.647 107.363C155.96 120.03 146.819 135.863 132.193 135.863H19.3205C4.69433 135.863 -4.44706 120.03 2.86605 107.363L59.3021 9.6128Z' fill='white' fill-opacity='0.1'/%3E%3C/svg%3E%0A");
+          position: absolute;
+          top: 8px;
+          right: 45px;
+          background-size: contain;
+          width: 180px;
+          height: 180px;
+        }
+      }
+      .double-box {
+        padding: 40px 16px;
+      }
+    }
+  }
+}
+
+@keyframes animateHandFromLeftIdle {
+  0% {
+    left: var(--hand-left-end);
+    transform: rotateZ(0deg);
+  }
+  50% {
+    left: calc(var(--hand-left-end) + 10px);
+    transform: rotateZ(-1deg);
+  }
+  100% {
+    left: var(--hand-left-end);
+    top: var(--hand-top);
+    transform: rotateZ(1deg);
+  }
+}
+@keyframes animateHandFromLeftIn {
+  0% {
+    left: var(--hand-left-start);
+    transform: rotateZ(-15deg);
+  }
+  70% {
+    left: var(--hand-left-end);
+    transform: rotateZ(2deg);
+  }
+  100% {
+    left: var(--hand-left-end);
+    transform: rotateZ(0deg);
+  }
+}
