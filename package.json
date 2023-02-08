@@ -1,0 +1,75 @@
+{
+  "name": "academy-frontend",
+  "version": "0.1.1",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
+    "axios": "^0.27.2",
+    "flat": "^5.0.2",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.54.5",
+    "typescript": "^4.8.2",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:local": "env-cmd -f .env.local react-scripts start",
+    "start:dev": "env-cmd -f .env.development react-scripts start",
+    "start:prod": "env-cmd -f .env.production react-scripts start",
+    "start:qa": "env-cmd -f .env.test react-scripts start",
+    "build:dev": "rm -rf && env-cmd -f .env.development react-scripts build",
+    "build:prod": "rm -rf && env-cmd -f .env.production react-scripts build",
+    "build:qa": "rm -rf && env-cmd -f .env.test react-scripts build",
+    "serve": "serve -s build",
+    "serve:dev": "yarn build:dev && yarn serve",
+    "serve:prod": "yarn build:prod && yarn serve",
+    "serve:qa": "yarn build:qa && yarn serve",
+    "ind": "create-index --update ./src/modules ./src/components ./src/utils"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "off"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/flat": "^5.0.2",
+    "@types/node": "^16.11.56",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/redux-logger": "^3.0.9",
+    "@types/yup": "^0.32.0",
+    "env-cmd": "^10.1.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "redux-logger": "^3.0.6",
+    "serve": "^14.0.1"
+  }
+}
